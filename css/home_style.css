@@ -1,0 +1,23 @@
+.mian-home{
+    display: flex;
+    margin-left: center;
+    margin-right: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.icon{
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    object-fit: cover;
+    border-radius: 100%;
+    position: center center;
+}
+
+body {
+    background-color: rgb(255, 0, 0);
+}
+
+
+  
