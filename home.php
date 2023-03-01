@@ -39,52 +39,80 @@ if (isset($_POST['show'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/home_style.css">
   <title>WebBank</title>
+
+  <!-- <style>
+    body {
+      background-image: url(https://p4.wallpaperbetter.com/wallpaper/159/576/899/the-sky-clouds-landscape-nature-wallpaper-preview.jpg);
+      background-size: cover;
+    }
+
+}
+    .main-home {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main-home > div {
+      margin: 10px;
+      text-align: center;
+      width: calc(25% - 20px);
+    }
+
+    h1 {
+      color: green;
+      text-align: center;
+    }
+
+    p {
+      color: green;
+      text-align: center;
+    }
+
+  </style> -->
 </head>
 
 <body>
-  <div class="mian-home">
   <h1>Welcome! , <?php echo $user['username']; ?></h1>
   <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
-  <div class="mian-home">
-    <div >
+  <div class="main-home">
+    <div class="item-cheild" >
       <form action="withdraw.php">
         <div class="withdraw">
           <button type="submit" class="icon">
             <img src="img/cash-withdrawal.png" alt="withdraw" width="200px" height="200px">
           </button>
-          <label for="">Withdraw</label>
         </div>
       </form>
+      <h4 for="">Withdraw</h4>
     </div>
-    <div >
+    <div class="item-cheild">
       <form action="deposit.php">
         <div class="deposit">
           <button type="submit" class="icon">
             <img src="img/Deposit.png" alt="deposit" width="200px" height="200px">
           </button>
-          <label for="">Deposit</label> 
         </div>
       </form>
+      <h4  for="">Deposit</h4>
     </div>
-    <div>
+    <div class="item-cheild" >
       <form action="statement.php">
         <div class="statement">
           <button type="submit" class="icon">
             <img src="img/statement.png" alt="statement" width="200px" height="200px">
           </button>
-          <label for="">Check Statement</label>
         </div>
+        <h4  for="">Check Statement</h4>
       </form>
     </div>
-    <div >
+    <div>
       <a href="logout.php" onclick="return confirm('Are you confirm to logout?');"> <img src="img/logout.png" alt="" class="icon" width="200px" height="200px"></a>
     </div>
   </div>
-  <div class="input-field">
-    <input type="text" class="input"
-  </div>
-
-
+  <!-- <div class="input-field">
+  </div> -->
 </body>
 
 </html>

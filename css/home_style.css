@@ -1,25 +1,53 @@
-.mian-home{
-    display: flex;
-    margin :0 auto;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-}
-
-.icon{
-    width: 150px;
-    height: 150px;
-    margin: 50px;
-    object-fit: cover;
-    border-radius: 100%;
-    position: center center;
+.main-home {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 2rem;
 }
 
 body {
-    
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/159/576/899/the-sky-clouds-landscape-nature-wallpaper-preview.jpg);
+  background-size: cover;
+}
+
+.balance {
+  margin-top: 0;
 }
 
 
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 
-  
+.icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1 {
+  color: green;
+  text-align: center;
+}
+
+p {
+  color: green;
+  text-align: center;
+}
+
+.item-cheild{
+  text-align: center;
+}
+

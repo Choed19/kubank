@@ -21,13 +21,13 @@ if (isset($_POST['deposit'])) {
   $sql = "UPDATE users SET balance='$new_balance' WHERE id='$user_id'";
   mysqli_query($conn, $sql);
   $user['balance'] = $new_balance;
-  
-      $datetime = date("Y-m-d H:i:s");
-    // $sql = "INSERT INTO statement (id,user_id, created_at, status, value) VALUES (null, $user_id, $datetime,'Withdraw', $new_balance)";
-    $sql = "INSERT INTO statement (id, user_id, created_at, status, value) VALUES (NULL, '$user_id', NOW(), 'Withdraw', $amount)";
-    mysqli_query($conn, $sql);
 
-  header("Location: http://localhost/kubank/home.php"); 
+  $datetime = date("Y-m-d H:i:s");
+  // $sql = "INSERT INTO statement (id,user_id, created_at, status, value) VALUES (null, $user_id, $datetime,'Withdraw', $new_balance)";
+  $sql = "INSERT INTO statement (id, user_id, created_at, status, value) VALUES (NULL, '$user_id', NOW(), 'Withdraw', $amount)";
+  mysqli_query($conn, $sql);
+
+  header("Location: http://localhost/kubank/home.php");
 }
 
 
@@ -46,17 +46,37 @@ if (isset($_POST['show'])) {
 
 ?>
 
-<h1>Welcome! , <?php echo $user['username']; ?></h1>
-<p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
-<a href="home.php"> <img src="img/logout.png" alt=""></a>
+<!DOCTYPE html>
+<html lang="en">
 
-<h2>Deposit</h2>
-<form method="post">
-  <label for="amount"></label>
-  <div class="money">
-    <input type="number" id="amount" name="amount" placeholder="0.00">
-</div>
-  <div class="conmfirm">
-    <button type="submit" name="deposit" onclick="return confirm('Are you confirm your money?');">Confirm</button>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/withdraw.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div class="main">
+    <h1>Welcome! , <?php echo $user['username']; ?></h1>
+    <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
+
+    <h2>Deposit</h2>
+    <form method="post">
+      <label for="amount"></label>
+      <div class="money">
+      <input type="number" id="amount" class="form-control" min=0  name="amount" placeholder="0.00" style="width:200px; margin:auto;">
+      </div>
+      <div class="conmfirm pt-2">
+        <button type="submit" class="btn btn-success" name="deposit" onclick="return confirm('Are you confirm your money?');">Confirm</button>
+      </div>
+    </form>
+    <a href="home.php"> <img src="img/logout.png" alt="" width="50px" height="50px"></a>
+
   </div>
-</form>
+</body>
+
+</html>

@@ -30,8 +30,7 @@ if (isset($_POST['withdraw'])) {
     $sql = "INSERT INTO statement (id, user_id, created_at, status, value) VALUES (NULL, '$user_id', NOW(), 'Withdraw', $amount)";
     mysqli_query($conn, $sql);
 
-  header("Location: http://localhost/kubank/home.php"); 
-
+    header("Location: http://localhost/kubank/home.php");
   }
 }
 
@@ -50,16 +49,36 @@ if (isset($_POST['show'])) {
 
 ?>
 
-<h1>Welcome! , <?php echo $user['username']; ?></h1>
-<p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
-<a href="home.php"> <img src="img/logout.png" alt=""></a>
+<!DOCTYPE html>
+<html lang="en">
 
-<h2>Withdraw</h2>
-<form method="post">
-  <label for="amount"></label>
-  <div class="money">
-    <input type="number" id="amount" name="amount" placeholder="0.00">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/withdraw.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Withdraw</title>
+</head>
+
+<body>
+  <div class="main">
+    <h1>Welcome! , <?php echo $user['username']; ?></h1>
+    <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
+
+    <h2>Withdraw</h2>
+    <form method="post">
+      <label for="amount"></label>
+      <div class="money">
+        <input type="number" id="amount" class="form-control" min=0  name="amount" placeholder="0.00" style="width:200px; margin:auto;">
+      </div>
+      <div class="conmfirm pt-2">
+        <button type="submit" name="withdraw" class="btn btn-success" onclick="return confirm('Are you confirm your money?');">Confirm</button>
+      </div>
+      <a href="home.php" > <img src="img/logout.png" alt="" width="50px" height="50px"></a>
+    </form>
   </div>
-  <div class="conmfirm">
-    <button type="submit" name="withdraw" onclick="return confirm('Are you confirm your money?');">Confirm</button>
-  </div>
+
+</body>
+
+</html>
