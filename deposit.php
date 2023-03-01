@@ -24,7 +24,7 @@ if (isset($_POST['deposit'])) {
 
   $datetime = date("Y-m-d H:i:s");
   // $sql = "INSERT INTO statement (id,user_id, created_at, status, value) VALUES (null, $user_id, $datetime,'Withdraw', $new_balance)";
-  $sql = "INSERT INTO statement (id, user_id, created_at, status, value) VALUES (NULL, '$user_id', NOW(), 'Withdraw', $amount)";
+  $sql = "INSERT INTO statement (id, user_id, created_at, status, value) VALUES (NULL, '$user_id', NOW(), 'Deposit', $amount)";
   mysqli_query($conn, $sql);
 
   header("Location: http://localhost/kubank/home.php");
@@ -55,7 +55,7 @@ if (isset($_POST['show'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/withdraw.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <title>Document</title>
+  <title>WebBank: Deposit</title>
 
 </head>
 
