@@ -1,19 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
 *{
-    font-family: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    font-family: 'Gloock', serif;
+    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-    background-color: rgb(255, 0, 0);
-    display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("image.jpg");
-
   }
-  
+  body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    background-position: center;
+    background-image: url(https://images.unsplash.com/photo-1676845578082-2e08e7c359b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+}
+
 
 .container{
     width: 450px;

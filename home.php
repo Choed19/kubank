@@ -42,9 +42,9 @@ if (isset($_POST['show'])) {
 </head>
 
 <body>
+  <div class="mian-home">
   <h1>Welcome! , <?php echo $user['username']; ?></h1>
   <p>Balance : <?php echo number_format($user['balance'], 2); ?> THB</p>
-
   <div class="mian-home">
     <div >
       <form action="withdraw.php">
